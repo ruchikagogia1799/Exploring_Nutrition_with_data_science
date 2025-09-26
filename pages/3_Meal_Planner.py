@@ -78,7 +78,7 @@ def apply_theme(c: alt.Chart) -> alt.Chart:
     )
 
 # ---------- Config ----------
-DATA_CSV = Path("./diet_corrected.csv")
+DATA_CSV = Path("./Final.csv")
 st.set_page_config(page_title="🍽️ Meal Tracker", layout="wide")
 
 # ---------- Table helper ----------
@@ -205,8 +205,8 @@ if "cart" not in st.session_state:
 # ---------- Sidebar ----------
 with st.sidebar:
     st.header("🎯 Daily Goal")
-    daily_kcal = st.number_input("Daily Calorie Target (kcal)", 800, 5000, 2000, step=50)
-    default_serving = st.number_input("Default Serving Size (g)", 50, 300, 100, step=10)
+    daily_kcal = st.number_input("Daily Calorie Target (kcal)", 800, 5000, 1500, step=50)
+    default_serving = st.number_input("Default Serving Size (g)", 50, 300, 200, step=10)
     st.markdown("---")
     if st.button("🧹 Clear My Plan"):
         st.session_state.cart = []

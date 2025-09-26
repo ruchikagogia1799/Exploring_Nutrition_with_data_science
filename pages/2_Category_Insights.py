@@ -78,7 +78,7 @@ def apply_theme(c: alt.Chart) -> alt.Chart:
          .configure_view(strokeOpacity=0)
     )
 
-DATA_CSV = Path("./diet_corrected.csv")
+DATA_CSV = Path("./Final.csv")
 
 # ---------- Helpers ----------
 def show_table(df: pd.DataFrame):

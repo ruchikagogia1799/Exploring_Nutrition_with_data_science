@@ -75,7 +75,7 @@ def apply_theme(c: alt.Chart) -> alt.Chart:
     )
 
 # ---------- Config ----------
-DATA_CSV = Path("./diet_corrected.csv")
+DATA_CSV = Path("./Final.csv")
 st.set_page_config(page_title="Suggestions", layout="wide")
 
 # ---------- Table helper ----------
