@@ -11,14 +11,14 @@
   - Indian_Food_Nutrition_Processed — [Download](https://storage.googleapis.com/kagglesdsdata/datasets/6818823/10960650/Indian_Food_Nutrition_Processed.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20250924%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250924T192355Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=29a33e205c5eabd749ab3a27bf1177b789717486358200c17e9d741088d41f0eacc571a83f72b358b10cc23cf7d4861dfc2b9b4d4fece3c9afcb11456ca876e84ee5bebe5a9e182fcc5967a080a1f5b874097fc00337af9b1cb7235c7e68b51f56086594e5dc7e2f70ab3c6efebbc0b5c9641470fbf74c9edb57fe4a380e1e51b79ff1285f34506298e09dd1e278d3935ac31adb00f72afe5bb6ee0c0ebdf97b9127da10f53be2a77c24e47eb05dafc80f4874b5c9a18362ce671b4bd7e070d5252ce653d1f1a20ec8cd8aec114dff6d4e16fec69e9f7a30c7bb34b2ca92fd5216c36fc52df49a6b34d7bf4f8d01b341ab522bb8b46173657f8af4591791dcf8)
   - foodstruct_nutritional_facts — [Download](https://storage.googleapis.com/kagglesdsdata/datasets/5628069/9488478/foodstruct_nutritional_facts.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20250924%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250924T192243Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=95dff25a7b8225d9cfe9edcd4f90bd036a23ab99eb7890d8ad2f4a75d172bc8794c68893d6cf436f8d1477065fd740764bfee7bf04ccafcd759745368afd084115a7e7464eab2b4c8af40ab76c5703f81262a29366709c683456a08ce45a4e0dac73b91ac415b1c9fadfb7e1ac285f45d7b0aa72a2b1a4f519e209c03ca5b50a6ab2d093d2133fa7286c3728bab21c107a566b20442c3a9271746ecdbad1f8df44efd3faf7a2faa16d627105455e5bca83144235ab2477789d4f7af8c5cd12f0ce9fd539e471498f28d762b6723eef0fc08d91f730f108d3069b1e90a14b9202c76358070da058dc98cc077b271045d8d0884fc4fd5484eda228a41c4b38bcd9)
 
-- **Presentation Slides** — [Open](https://docs.google.com/presentation/d/1jVFkUTaTKaJCQAjpNNRqWDLJNinIc7f7IqCiMvRuZU4/edit?slide=id.p#slide=id.p)
+- **Presentation Slides Link** — [Open](https://docs.google.com/presentation/d/1jVFkUTaTKaJCQAjpNNRqWDLJNinIc7f7IqCiMvRuZU4/edit?usp=sharing)
 
-- **Streamlit App** — `https://exploring-nutrition-with-data-science.streamlit.app/`
+- **Streamlit App Link** — [Open](https://exploring-nutrition-with-data-science.streamlit.app/)
 
 ---
 
 <p align="center">
-  <img src="Presentation/eat-icegif-6.gif" alt="Demo GIF" width="80%">
+  <img src="Images/eat-icegif-6.gif" alt="Demo GIF" width="80%">
 </p>
 
 <h1 align="center">🥗 Diet & Nutrition Dashboard</h1>
