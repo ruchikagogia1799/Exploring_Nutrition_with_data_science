@@ -1,3 +1,6 @@
 .env
 *.csv
-usda_data.zip
+usda_data.zipExploring_Nutrition_with_data_science/usda_data.zip
+data/
+.env
+.venv/
