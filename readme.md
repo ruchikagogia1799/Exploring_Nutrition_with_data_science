@@ -9,12 +9,18 @@
   - [Download Data Files](https://fdc.nal.usda.gov/download-datasets.html)  
 
 - **Datasets Used in This App**  
-  - `food.csv` — Foundation + SR Legacy Foods   
+  The large USDA datasets (~200 MB) are hosted externally on **Google Drive** and are downloaded automatically when the notebook or Streamlit app is first launched.  
+
+  - `food.csv` — Foundation + SR Legacy Foods  
   - `food_nutrient.csv` — Nutrient values linked by `fdc_id`  
   - `food_category.csv` — Food category descriptions  
+  - `nutrient.csv` — Nutrient definitions and units  
+
+  **Google Drive Archive:** [Download ZIP (Drive)](https://drive.google.com/file/d/YOUR_ZIP_FILE_ID/view?usp=sharing)  
+  *(The code automatically extracts this ZIP and loads all four CSVs.)*
 
 - **Presentation Slides** — [Open](https://docs.google.com/presentation/d/18Fi1D3TfFLYg-46NBRKBAIH7EhgcnCN4kzrJiamnipE/edit?usp=sharing)  
-- **Streamlit App** — [Open](https://exploring-nutrition-with-data-science.streamlit.app/)  
+- **Streamlit App** — [Open](https://exploringnutritionwithdatascience.streamlit.app/)  
 
 ---
 
@@ -35,18 +41,31 @@
 
 ## 📖 Overview
 The **Smart Diet & Nutrition App** is an interactive tool that makes **healthy eating personalized**.  
-From exploring USDA food data to building meal plans, tracking body metrics, and chatting with an AI coach — the app combines **data science + nutrition + interactivity** in one place.  
+From exploring USDA food data to building meal plans, tracking body metrics, chatting with an AI coach, and collecting user feedback — the app combines **data science + nutrition + interactivity** in one place.  
+
+All **user accounts** and **feedback messages** are securely stored in a **Neon Cloud PostgreSQL** database, ensuring real-time data persistence across sessions.  
 
 <p align="center"><i>Explore → Track → Plan → Improve</i></p>
 
 ---
 
 ## ✨ Features
-- 📊 Explore **USDA nutrient data** (foundation, legacy)  
-- 🔑 Secure **user login & registration**  
+- 🔑 Secure **User Registration & Login** — managed via Neon Cloud PostgreSQL  
+- 💬 Built-in **Feedback & Support** page — feedback stored securely in the Neon database  
+- 📊 Explore **USDA nutrient data** (foundation + legacy)  
 - 🧍 Personalized **Body Metrics (BMR/TDEE)**  
 - 🥗 **Meal Planner & Swaps** with AI suggestions  
-- 🤖 **AI Chatbot** (nutrition + lifestyle Q&A)  
+- 🤖 **AI Chatbot** for nutrition & lifestyle guidance  
+
+---
+
+## 🗣️ Feedback System
+The app includes a **Feedback & Support** page where users can share comments, questions, or feature requests.  
+
+- Feedback is securely stored in the **Neon PostgreSQL Cloud Database**.  
+- Uses `.env` for local development and `st.secrets` on **Streamlit Cloud** for production.  
+- Admins can view all feedback directly from a protected admin page.  
+- Demonstrates backend data persistence and secure database integration.
 
 ---
 
@@ -57,6 +76,7 @@ From exploring USDA food data to building meal plans, tracking body metrics, and
 3. **Body Metrics** → Calculate BMR, TDEE and recommended macros  
 4. **Meal Planner & Swaps** → Build daily meals & swap for healthier alternatives  
 5. **AI Chatbot** → Conversational nutrition assistant, personalized after login  
+6. **Feedback & Support** → Submit feedback or queries stored securely in the Neon database  
 
 ---
 
@@ -70,22 +90,42 @@ From exploring USDA food data to building meal plans, tracking body metrics, and
 |---|---|
 | ![Body Metrics](Images/s3.png) | ![Meal Planner](Images/s4.png) |
 
-| AI Chatbot |
-|---|
-| ![Chatbot](Images/s5.png) |
+| AI Chatbot | Feedback Form |
+|---|---|
+| ![Chatbot](Images/s5.png) | ![Feedback](Images/s6.png) |
 
 ---
 
 ## ⚡ Quickstart
 
 ```bash
-# 1) Clone
+# 1) Clone the repository
 git clone https://github.com/YOUR_USERNAME/smart-nutrition-app.git
 cd smart-nutrition-app
 
-# 2) Install deps
+# 2) Create and activate a virtual environment
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# 3) Install dependencies
 pip install -r requirements.txt
 
-# 3) Run app
+# 4) Environment setup (⚙️ Important)
+This app connects to **Neon Cloud PostgreSQL**, where all user accounts and feedback data are stored.
+
+Create a .env file in your project root with your Neon database credentials:
+
+NEON_HOST=your-neon-hostname
+NEON_DBNAME=main
+NEON_USER=your-username
+NEON_PASSWORD=your-password
+NEON_SSLMODE=require
+
+⚠️ Make sure `.env` is listed in `.gitignore` to keep it private.
+
+# 5) Run the Streamlit app
 streamlit run Homepage.py
+
+# 6) Data auto-load
+On first run, the script automatically downloads and unzips the USDA dataset from Google Drive
+(`usda_data.zip`) into a local `data/` folder.  
+Subsequent runs reuse the extracted files.
