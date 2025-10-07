@@ -1,6 +1,5 @@
 # pages/1_Register_Login.py
 import streamlit as st
-import bcrypt
 from db import register_user, login_user, user_exists
 from common import set_page_config, apply_custom_styles
 
@@ -20,10 +19,13 @@ with tabs[0]:
         username = st.text_input("Username")
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
-        weight = st.number_input("Weight (kg)", min_value=20, max_value=200, step=1)
-        height = st.number_input("Height (cm)", min_value=100, max_value=220, step=1)
-        age = st.number_input("Age", min_value=10, max_value=100, step=1)
-        gender = st.selectbox("Gender", ["Male", "Female"])
+
+        # Blank input fields (appear empty until user types)
+        weight_str = st.text_input("Weight (kg)", placeholder="Enter your weight")
+        height_str = st.text_input("Height (cm)", placeholder="Enter your height")
+        age_str = st.text_input("Age", placeholder="Enter your age")
+
+        gender = st.selectbox("Gender", ["Male", "Female", "Other"])
         activity = st.selectbox(
             "Activity Level",
             ["Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Extra Active"]
@@ -32,16 +34,29 @@ with tabs[0]:
         submitted = st.form_submit_button("Register")
 
     if submitted:
+        # Validate required fields
         if not username or not email or not password:
             st.error("⚠️ Please fill in all required fields.")
-        elif user_exists(username, email):
+            st.stop()
+
+        # Validate numeric fields
+        try:
+            weight = float(weight_str)
+            height = float(height_str)
+            age = int(age_str)
+        except ValueError:
+            st.error("⚠️ Please enter valid numeric values for weight, height, and age.")
+            st.stop()
+
+        # Check for duplicates
+        if user_exists(username, email):
             st.error("⚠️ Username or email already exists.")
         else:
-            #hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
             success = register_user(username, email, password, weight, height, age, gender, activity)
             if success:
                 st.success("✅ Account created successfully! Please log in now.")
                 st.balloons()
+                st.rerun()
             else:
                 st.error("❌ Error creating account. Try again later.")
 
@@ -71,11 +86,8 @@ with tabs[1]:
                 st.session_state["user_profile"] = user
                 st.session_state["username"] = user.get("username", "User")
 
-                # ✅ Show success message immediately
                 st.success(f"✅ Successfully logged in as **{user['username']}**!")
                 st.balloons()
-
-                # Small navigation info
                 st.info("➡️ Now go to **Body Metrics** or **Meal Planner** to continue.")
             else:
                 st.error("❌ Invalid credentials. Please try again.")
