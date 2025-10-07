@@ -37,8 +37,8 @@ with tabs[0]:
         elif user_exists(username, email):
             st.error("⚠️ Username or email already exists.")
         else:
-            hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
-            success = register_user(username, email, hashed_pw, weight, height, age, gender, activity)
+            #hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+            success = register_user(username, email, password, weight, height, age, gender, activity)
             if success:
                 st.success("✅ Account created successfully! Please log in now.")
                 st.balloons()
