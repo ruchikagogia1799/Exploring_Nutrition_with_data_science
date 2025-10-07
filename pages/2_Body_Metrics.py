@@ -1,11 +1,7 @@
 # pages/2_Body_Metrics.py
 import streamlit as st
 from db import update_user
-from common import set_page_config, apply_custom_styles
 
-# --- Config ---
-set_page_config()
-apply_custom_styles()
 st.set_page_config(page_title="Body Metrics", layout="wide")
 
 # ---------------- Ensure Login ----------------

@@ -2,12 +2,36 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-from common import set_page_config, apply_custom_styles
+# from common import (
+#     set_page_config,
+#     apply_custom_styles,
+#     enable_theme_for_charts,
+#     theme_heading,
+#     theme_paragraph,
+#     get_text_color
+# )
 
-# --- Config ---
-set_page_config()
-apply_custom_styles()
+# set_page_config()
+# apply_custom_styles()
+# enable_theme_for_charts()
+# text_color = get_text_color()
+
+
+
+
 st.set_page_config(page_title="🍽️ USDA Food Dashboard", layout="wide")
+# theme_heading("🍽️ USDA Food Nutrient Dashboard", level=1)
+# theme_heading("🥩 Top Protein Foods (per 100 g)", level=3)
+
+
+
+def enable_theme_for_charts():
+    theme = st.get_option("theme.base")
+    if theme == "dark":
+        alt.themes.enable("dark")
+    else:
+        alt.themes.enable("default")
+
 
 # ----------------- Load USDA dataset -----------------
 

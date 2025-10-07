@@ -3,11 +3,6 @@ import streamlit as st
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-from common import set_page_config, apply_custom_styles
-
-# --- Config ---
-set_page_config()
-apply_custom_styles()
 
 load_dotenv()  # only needed locally
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

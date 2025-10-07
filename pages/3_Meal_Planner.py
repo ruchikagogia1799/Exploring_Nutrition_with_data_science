@@ -1,15 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from common import set_page_config, apply_custom_styles
-from common import set_page_config, apply_custom_styles
-
-# --- Config ---
-set_page_config()
-apply_custom_styles()
-# --- Config ---
-set_page_config()
-apply_custom_styles()
 
 st.set_page_config(page_title="Meal Planner", layout="wide")
 

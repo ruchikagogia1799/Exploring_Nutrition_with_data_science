@@ -1,12 +1,7 @@
-# pages/1_Register_Login.py
+# pages/1_Register_or_Login.py
 import streamlit as st
 from db import register_user, login_user, user_exists
-from common import set_page_config, apply_custom_styles
 
-# --- Config ---
-set_page_config()
-apply_custom_styles()
-st.set_page_config(page_title="Authentication", layout="wide")
 
 st.title("🔐 Authentication")
 tabs = st.tabs(["📝 Register", "🔑 Login"])
@@ -16,11 +11,10 @@ with tabs[0]:
     st.subheader("Create a new account")
 
     with st.form("register_form"):
-        username = st.text_input("Username")
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
+        username = st.text_input("Username", placeholder="Enter your username")
+        email = st.text_input("Email", placeholder="Enter your email")
+        password = st.text_input("Password", type="password", placeholder="Enter your password")
 
-        # Blank input fields (appear empty until user types)
         weight_str = st.text_input("Weight (kg)", placeholder="Enter your weight")
         height_str = st.text_input("Height (cm)", placeholder="Enter your height")
         age_str = st.text_input("Age", placeholder="Enter your age")
@@ -48,7 +42,7 @@ with tabs[0]:
             st.error("⚠️ Please enter valid numeric values for weight, height, and age.")
             st.stop()
 
-        # Check for duplicates
+        # Check duplicates
         if user_exists(username, email):
             st.error("⚠️ Username or email already exists.")
         else:
@@ -65,8 +59,8 @@ with tabs[1]:
     st.subheader("Login to your account")
 
     with st.form("login_form"):
-        username_or_email = st.text_input("Username or Email")
-        password_login = st.text_input("Password", type="password")
+        username_or_email = st.text_input("Username or Email", placeholder="Enter your username or email")
+        password_login = st.text_input("Password", type="password", placeholder="Enter your password")
         login_btn = st.form_submit_button("Login")
 
     if login_btn:

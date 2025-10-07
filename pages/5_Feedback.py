@@ -6,9 +6,6 @@ from datetime import datetime
 from dotenv import load_dotenv
 from pathlib import Path
 
-# ---------------------------------------------------------
-# PAGE CONFIG
-# ---------------------------------------------------------
 st.set_page_config(page_title="💬 Feedback & Support", layout="wide")
 st.title("💬 Feedback & Support")
 st.write("Share your thoughts, feature requests, or report any issues below. Your feedback helps improve the app!")
