@@ -1,0 +1,10 @@
+streamlit
+pandas
+altair
+numpy
+sqlalchemy
+psycopg2-binary
+bcrypt
+openai
+python-dotenv
+gdown
