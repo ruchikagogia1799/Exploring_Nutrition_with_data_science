@@ -11,6 +11,22 @@
 
 ---
 
+<p align="center">
+  <img src="Images/1.gif" alt="Demo GIF" width="80%">
+</p>
+
+<h1 align="center">🥗 Personalized Nutrition Dashboard</h1>
+
+<p align="center">
+  <a href="https://www.python.org/"><img alt="Python" src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white"></a>
+  <a href="https://streamlit.io/"><img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-🎈-FF4B4B?logo=streamlit&logoColor=white"></a>
+  <a href="https://altair-viz.github.io/"><img alt="Altair" src="https://img.shields.io/badge/Altair-Charts-1E90FF"></a>
+  <a href="https://www.postgresql.org/"><img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Neon-336791?logo=postgresql&logoColor=white"></a>
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-brightgreen">
+</p>
+
+---
+
 ## 📖 Overview
 
 The **Smart Diet & Nutrition App** is an interactive full-stack data science project that makes healthy eating personalized and data-driven.
@@ -29,23 +45,6 @@ All user accounts and feedback are securely stored in a Neon Cloud PostgreSQL da
 
 ---
 
-
-
-<p align="center">
-  <img src="Images/1.gif" alt="Demo GIF" width="80%">
-</p>
-
-<h1 align="center">🥗 Personalized Nutrition Dashboard</h1>
-
-<p align="center">
-  <a href="https://www.python.org/"><img alt="Python" src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white"></a>
-  <a href="https://streamlit.io/"><img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-🎈-FF4B4B?logo=streamlit&logoColor=white"></a>
-  <a href="https://altair-viz.github.io/"><img alt="Altair" src="https://img.shields.io/badge/Altair-Charts-1E90FF"></a>
-  <a href="https://www.postgresql.org/"><img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Neon-336791?logo=postgresql&logoColor=white"></a>
-  <img alt="License" src="https://img.shields.io/badge/License-MIT-brightgreen">
-</p>
-
----
 
 ## 📂 Data Pipeline
 
